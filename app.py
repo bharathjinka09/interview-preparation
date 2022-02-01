@@ -45,28 +45,28 @@
 
 # Binary Search
 
-def binary_search(data, elem):
+def binary_search(arr, elem):
 
     low = 0
-    high = len(data) - 1
+    high = len(arr) - 1
 
     while low <= high:
       
         middle = (low + high)//2
        
-        if data[middle] == elem:
+        if arr[middle] == elem:
             return middle
-        elif data[middle] > elem:
+        elif arr[middle] > elem:
             high = middle - 1
         else:
             low = middle + 1
 
     return -1
     
-data = [1,3,4,6,7,8,10,13,14,18,19,21,24,37,40,45,71]
+arr = [1,3,4,6,7,8,10,13,14,18,19,21,24,37,40,45,71]
 elem = 7
 
-output = binary_search(data, elem)
+output = binary_search(arr, elem)
 print(output)
 
 # test_list = [1,3,4,5,3,4]
