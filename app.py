@@ -22,17 +22,52 @@
 
 
 
-
+# fibonacci numbers
 # def fib(num):
 # 	a,b=0,1
 # 	for i in range(0,num):
-# 		yield "{}:{}".format(i+1,a)
+# 		# yield "{}:{}".format(i+1,a)
+# 		yield a
 # 		a,b=b,a+b
 		
 # for j in fib(10):
 # 	print(j)
 
 
+# Linear Search
+
+# data = [1,3,4,6,7,8,10,13,14,18,19,21,24,37,40,45,71]
+
+# for i in range(len(data)): 
+#     if data[i] == 7:
+#         print(i)
+
+
+# Binary Search
+
+def binary_search(data, elem):
+
+    low = 0
+    high = len(data) - 1
+
+    while low <= high:
+      
+        middle = (low + high)//2
+       
+        if data[middle] == elem:
+            return middle
+        elif data[middle] > elem:
+            high = middle - 1
+        else:
+            low = middle + 1
+
+    return -1
+    
+data = [1,3,4,6,7,8,10,13,14,18,19,21,24,37,40,45,71]
+elem = 7
+
+output = binary_search(data, elem)
+print(output)
 
 # test_list = [1,3,4,5,3,4]
 # print ("The original list is : " +  str(test_list))
@@ -47,21 +82,21 @@
 
 
 
-def twoSum(nums, target):
-        dictionary = {}
-        answer = []
+# def twoSum(nums, target):
+#         dictionary = {}
+#         answer = []
         
-        for i in range(len(nums)):
-            secondNumber = target-nums[i]
-            if(secondNumber in dictionary.keys()):
-                secondIndex = nums.index(secondNumber)
-                if(i != secondIndex):
-                    return sorted([i, secondIndex])
+#         for i in range(len(nums)):
+#             secondNumber = target-nums[i]
+#             if(secondNumber in dictionary.keys()):
+#                 secondIndex = nums.index(secondNumber)
+#                 if(i != secondIndex):
+#                     return sorted([i, secondIndex])
                 
-            dictionary.update({nums[i]: i})
+#             dictionary.update({nums[i]: i})
 
-res = twoSum([1,2,3],3)
-print(res)
+# res = twoSum([1,2,3],3)
+# print(res)
 
 
 
