@@ -75,8 +75,8 @@ def reverse_string_decorator(function):
 	return wrapper
 
 @splitter_decorator # this is executed next
-@lowercase_decorator # this is executed first
-@reverse_string_decorator
+@lowercase_decorator # this is executed second
+@reverse_string_decorator # this is executed first
 def hello():
    return 'Hello World'
 print(hello()) 
